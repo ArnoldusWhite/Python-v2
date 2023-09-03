@@ -8,8 +8,10 @@ pipeline {
                 echo 'Building..'
             }
         }
-        steps {
-            sh 'python unit-test.py'
+        stage('Test'){
+            steps {
+                sh 'python unit-test.py'
+            }
         }
         stage('Deploy') {
             steps {
