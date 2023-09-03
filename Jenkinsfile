@@ -1,13 +1,22 @@
+// Declarative //
 pipeline {
-  agent {label "windows"}
-  options {
-    buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
-    disableConcurrentBuilds()
-  }
-  stages {
-    stage('Hello')
-    steps{
-      echo "Hello"
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
-  }
 }
