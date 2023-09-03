@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Test'){
             steps {
-                sh 'python test.py'
+                bat 'python test.py'
             }
         }
         stage('Deploy') {
