@@ -4,10 +4,8 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
-                withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
+            steps {  
                   sh 'pip install -r requirements.txt'
-                }
             }
         }
         stage('Test'){
