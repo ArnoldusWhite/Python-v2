@@ -4,13 +4,13 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
-                echo 'Building..'
+            steps {  
+                  bat 'pip install -r requirements.txt'
             }
         }
-        stage('Test') {
+        stage('Test'){
             steps {
-                echo 'Testing..'
+                bat 'python test.py'
             }
         }
         stage('Deploy') {
